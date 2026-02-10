@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "f7d4",
+      "username": "ViniKiipi",
+      "email": "vinikippi@gmail.com",
+      "password": "1234",
+      "phnum": "987456+3210",
+      "imageUrl": "https://static.scientificamerican.com/sciam/cache/file/41DF7DA0-EE58-4259-AA815A390FB37C55_source.jpg",
+      "gender": "male"
+    },
+    {
+      "id": "8adf",
+      "username": "Harshitha",
+      "email": "h@gmail.com",
+      "password": "1234",
+      "phnum": "987456+3210",
+      "imageUrl": "https://vegrecipesofkarnataka.com/assets/img/uddina-vade/uddina-vade-recipe.jpg",
+      "gender": "female"
+    }
+  ]
+}
