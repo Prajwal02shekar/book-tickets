@@ -8,6 +8,7 @@ import Concet from './concertComponent/Concet'
 import Parks from './parksComponent/Parks'
 import Login from './authComponent/Login'
 import Register from './authComponent/Register'
+import Details from './pages/Details'
 
 const App = () => {
     let router = createBrowserRouter([
@@ -43,6 +44,10 @@ const App = () => {
                     path: '/register',
                     element: <Register />
                 },
+                {
+                    path:`/details/:type/:id`,
+                    element:<Details/>
+                }
 
             ]
         }

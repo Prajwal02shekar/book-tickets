@@ -2,6 +2,10 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
+    let userDetails = JSON.parse(localStorage.getItem('userDetails')) || {}
+    console.log(userDetails[0])
+    let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    console.log(isLoggedIn)
     return (
         <nav className="navbarContainer">
             <aside className="logo">
@@ -16,8 +20,22 @@ const Navbar = () => {
 
             </aside>
             <aside className="btns">
-                <NavLink to='/login'><button>Login</button></NavLink>
-                <NavLink to='/register'><button>Register</button></NavLink>
+
+                {
+                    isLoggedIn ? (
+                        <>
+                            <img src={userDetails[0].imageUrl} height={50} width={50} style={{borderRadius:"50%"}} alt={userDetails[0].username} />
+                            <NavLink to='/register'><button>Logout</button></NavLink>
+
+                        </>
+                    ) : (
+                        <>
+                            <NavLink to='/login'><button>Login</button></NavLink>
+                            <NavLink to='/register'><button>Register</button></NavLink>
+                        </>
+                    )
+                }
+
             </aside>
         </nav>
     )
