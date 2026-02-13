@@ -9,6 +9,8 @@ import Parks from './parksComponent/Parks'
 import Login from './authComponent/Login'
 import Register from './authComponent/Register'
 import Details from './pages/Details'
+import BookTickets from './pages/BookTickets'
+import Tickets from './pages/Tickets'
 
 const App = () => {
     let router = createBrowserRouter([
@@ -37,6 +39,10 @@ const App = () => {
                     element: <Parks />
                 },
                 {
+                    path: '/tickets',
+                    element: <Tickets />
+                },
+                {
                     path: '/login',
                     element: <Login />
                 },
@@ -47,6 +53,11 @@ const App = () => {
                 {
                     path:`/details/:type/:id`,
                     element:<Details/>
+                }
+                ,
+                {
+                    path:`/booking/:type/:id`,
+                    element:<BookTickets/>
                 }
 
             ]

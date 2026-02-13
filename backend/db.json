@@ -95,5 +95,28 @@
       "img": "https://img.ipl.com/upload/20250322/5caa9e74cef17d19370b59c91d1caaed.jpg",
       "stadium": " M Chinnaswamy stadium"
     }
+  ],
+  "bookings": [
+    {
+      "id": "a70a",
+      "username": "Sanjeeev",
+      "email": "s@gmail.com",
+      "phnum": "1234567890",
+      "seats": "2"
+    },
+    {
+      "id": "280d",
+      "username": "TejasAngel",
+      "email": "ta@gmail.com",
+      "phnum": "1234567890",
+      "seats": "2"
+    },
+    {
+      "id": "a610",
+      "username": "Vini143Kippi",
+      "email": "vinikippi@gmail.com",
+      "phnum": "1234567890",
+      "seats": "4"
+    }
   ]
 }

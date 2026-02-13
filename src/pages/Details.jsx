@@ -25,7 +25,7 @@ const Details = () => {
                 <h3>{details.genre}</h3>
                 <h3>{details.stadium}</h3>
                 <h3>Available Seats :{details.seats}</h3>
-                <NavLink><button>Book Tickets</button></NavLink>
+                <NavLink to={`/booking/${type}/${details.id}`}><button>Book Tickets</button></NavLink>
             </article>
         </div>
 

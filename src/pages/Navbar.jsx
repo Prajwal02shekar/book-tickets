@@ -17,6 +17,8 @@ const Navbar = () => {
                 <NavLink to="/sports">Sports</NavLink>
                 <NavLink to="/concerts">Concerts</NavLink>
                 <NavLink to='/parks'>Parks</NavLink>
+                <NavLink to='/tickets'>Tickets</NavLink>
+
 
             </aside>
             <aside className="btns">
