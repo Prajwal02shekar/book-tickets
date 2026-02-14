@@ -1,11 +1,17 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
     let userDetails = JSON.parse(localStorage.getItem('userDetails')) || {}
     console.log(userDetails[0])
     let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     console.log(isLoggedIn)
+    let navigate=useNavigate()
+
+    let handleLogout=()=>{
+        localStorage.clear();
+        
+    }
     return (
         <nav className="navbarContainer">
             <aside className="logo">
@@ -27,7 +33,7 @@ const Navbar = () => {
                     isLoggedIn ? (
                         <>
                             <img src={userDetails[0].imageUrl} height={50} width={50} style={{borderRadius:"50%"}} alt={userDetails[0].username} />
-                            <NavLink to='/register'><button>Logout</button></NavLink>
+                            <NavLink ><button onClick={handleLogout}>Logout</button></NavLink>
 
                         </>
                     ) : (
