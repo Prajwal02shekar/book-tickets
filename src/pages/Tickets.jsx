@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import { toast } from 'react-toastify';
 
 const Tickets = () => {
 
@@ -12,6 +13,8 @@ const Tickets = () => {
                 setTickets(res.data)
             })
     }, [])
+
+    
     return (
         <section className="tickets-container">
             {

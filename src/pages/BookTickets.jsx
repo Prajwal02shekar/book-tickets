@@ -7,14 +7,16 @@ const BookTickets = () => {
 
     let [booking, setBooking] = useState([])
     let { id, type } = useParams();
-    let [formData,setFormData]=useState({
-        username:"",
-        email:"",
-        phnum:"",
-        seats:""
+    let [formData, setFormData] = useState({
+        username: "",
+        email: "",
+        phnum: "",
+        seats: ""
     })
+    let { username, email, seats, phnum } = formData;
+    seats = Number(seats);
 
-    let navigate=useNavigate();
+    let navigate = useNavigate();
     useEffect(() => {
         axios.get(`http://localhost:3000/${type}/${id}`)
             .then((res) => {
@@ -24,30 +26,48 @@ const BookTickets = () => {
             })
     }, [id, type])
 
-     let handleChange=(e)=>{
-        setFormData({...formData,[e.target.name]:e.target.value})
+    let handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
-    let handleSubmit=(e)=>{
+
+    // let handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log('form submitted')
+    //     console.log(formData)
+    //     axios.post('http://localhost:3000/bookings', formData);
+    //     toast.success("Tickests booked successfully")
+    //     setTimeout(() => {
+    //         navigate('/tickets')
+    //     }, [3000])
+    // }
+
+    let hanldeSubmit = (e) => {
         e.preventDefault();
-        console.log('form submitted')
-        console.log(formData)
-        axios.post('http://localhost:3000/bookings',formData);
-
-        toast.success("Tickests booked successfully")
-
-
-        setTimeout(()=>{
-            navigate('/tickets')
-        },[3000])
+        if (booking && seats <= booking.seats) {
+            axios.post('http://localhost:3000/bookings', {
+                username, phnum, email, seats: Number(seats), refID: booking.id, type, title: booking.title
+            }).then(() => {
+                axios.patch(`http://localhost:3000/${type}/${booking.id}`, {
+                    seats: booking.seats - seats
+                })
+                    .then((res) => {
+                        toast.success("Tickests booked successfully")
+                            setTimeout(() => {
+                                navigate('/tickets')
+                            }, [3000])
+                    })
+            })
+        }
     }
+
     return (
         <section className="booking-container">
-            <ToastContainer/>   
+            <ToastContainer />
             <h2>Booking for: {booking.title}</h2>
             <h3>Available Seats: {booking.seats}</h3>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={hanldeSubmit}>
                 <fieldset>
                     <legend>Boook Tickets</legend>
                     <label htmlFor="username">Username:</label>

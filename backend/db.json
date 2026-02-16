@@ -15,7 +15,7 @@
       "id": "1",
       "title": "KGF Chapter 1",
       "genre": "Action",
-      "seats": 70,
+      "seats": 66,
       "img": "https://m.media-amazon.com/images/M/MV5BNDVlYWYzNDUtZTM3Ny00OTI5LThiZDQtNTA0YjFhMTE1YTdjXkEyXkFqcGc@._V1_.jpg"
     },
     {
@@ -98,25 +98,14 @@
   ],
   "bookings": [
     {
-      "id": "a70a",
-      "username": "Sanjeeev",
-      "email": "s@gmail.com",
-      "phnum": "1234567890",
-      "seats": "2"
-    },
-    {
-      "id": "280d",
-      "username": "TejasAngel",
-      "email": "ta@gmail.com",
-      "phnum": "1234567890",
-      "seats": "2"
-    },
-    {
-      "id": "a610",
+      "id": "2cdb",
       "username": "Vini143Kippi",
-      "email": "vinikippi@gmail.com",
       "phnum": "1234567890",
-      "seats": "4"
+      "email": "vinikippi@gmail.com",
+      "seats": 4,
+      "refID": "1",
+      "type": "movies",
+      "title": "KGF Chapter 1"
     }
   ]
 }
